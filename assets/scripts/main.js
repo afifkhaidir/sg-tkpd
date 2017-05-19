@@ -19,6 +19,34 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        
+        /* ================
+         * Pivot Controller
+         * ================ */
+        var pivotDelay = 200, pivotEnterTimeout, pivotLeaveTimeout;
+        var overlay = $('.overlay');
+        var pivotContainer = $('.pivot-container');
+        
+        $('.pivot-button, .pivot-container').hover(function() {
+            /* Dont display pivot if mouse enter < delay */
+            clearTimeout(pivotLeaveTimeout);
+            
+            /* Setting delay on mouseenter */
+            pivotEnterTimeout = setTimeout(function() {
+                pivotContainer.addClass('pivot-container--active');
+                overlay.show();
+            }, pivotDelay);
+        }, function() {
+            /* Dont remove pivot if mouse leave < delay */
+            clearTimeout(pivotEnterTimeout);
+            
+            /* Setting delay on mouseleave */
+            pivotLeaveTimeout = setTimeout(function() {
+                pivotContainer.removeClass('pivot-container--active');
+                overlay.hide();
+            }, pivotDelay);
+        });
+        
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

@@ -1,0 +1,48 @@
+/* ==========
+ * Footer
+ * ==========*/
+.footer {
+    background: #fff;
+    padding: 20px 0;
+    font-family: 'Open Sans', 'Roboto Condensed', sans-serif;
+    color: #555;
+    box-shadow: 0 0 10px 5px rgba(166,166,166,.1);
+    
+    &-copyright {
+        float: left;
+        padding: 10px 0;
+        @include breakpoint(xs) {
+            text-align: center;
+            display: block;
+            float: none!important;
+        }
+    }
+    
+    &-connect {
+        float: right;
+        padding: 5px 0;
+        @include breakpoint(xs) {
+            text-align: center;
+            display: block;
+            float: none!important;
+        }
+        &-list {
+            margin: 0;
+            padding: 0 10px;
+            display: inline-block;
+            @include breakpoint(xs) {
+                padding: 5px;
+            }
+        }
+        &__list-item {
+            list-style: none;
+            display: inline-block;
+        }
+        &__apps-img {
+            height: 30px;
+        }
+        &__socmed-img {
+            height: 30px;
+        }
+    }
+}
