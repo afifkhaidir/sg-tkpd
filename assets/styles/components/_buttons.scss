@@ -1,0 +1,67 @@
+@import "../common/_variables";
+
+/* ==============
+ * Button Colors
+ * ============== */
+ 
+.btn {
+    transition: .2s;
+}
+.btn-green {
+    background: $brand-primary;
+    color: #FFF;
+}
+.btn-green:hover,
+.btn-green:focus {
+    background: $color-dark-primary;
+    color: #FFF;
+}
+.btn-orange {
+    background: $brand-secondary;
+    color: #FFF;
+}
+.btn-orange:hover,
+.btn-orange:focus {
+    background: $color-dark-secondary;
+    color: #FFF;
+}
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: $text-secondary;
+}
+.btn-ghost:hover,
+.btn-ghost:focus {
+    background: #F5F5F5;
+    color: $text-secondary;
+}
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:focus {
+    background: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.26);
+}
+
+
+/* ==============
+ * Button Size
+ * ============== */
+ 
+.btn-small {
+    font-size: 11px;
+    height: 32px;
+    border-width: 1px;
+    border-radius: 3px;
+}
+.btn-medium {
+    font-size: 13px;
+    height: 40px;
+    border-width: 1px;
+    border-radius: 3px;
+}
+.btn-big {
+    font-size: 14px;
+    height: 52px;
+    border-width: 1px;
+    border-radius: 3px;
+}

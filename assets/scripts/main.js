@@ -47,6 +47,22 @@
             }, pivotDelay);
         });
         
+        /* ================
+         * Slider
+         * ================ */
+        if($('.slider-slide').length > 1) {
+          $('.slider-wrapper').slick({
+              dots: true,
+              arrows: true,
+              fade: true,
+              autoplay: true,
+              autoplaySpeed: 5000,
+              prevArrow: '<a class="slick-prev"><img src="https://ecs7.tokopedia.net/assets/images/arrow/banner-arrow-left.png" class="slick-arrow__img" alt="slider left"/></a>',
+              nextArrow: '<a class="slick-next"><img src="https://ecs7.tokopedia.net/assets/images/arrow/banner-arrow-right.png" class="slick-arrow__img" alt="slider right"/></a>',
+              infinite: true
+          });
+      	}
+        
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

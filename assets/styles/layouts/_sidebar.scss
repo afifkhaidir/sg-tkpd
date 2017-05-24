@@ -1,0 +1,111 @@
+/* =============
+ * Sidebar
+ * ============= */
+
+.sidebar {
+    &-search {
+        position: relative;
+        margin-bottom: 20px;
+        &__heading {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        &__input {}
+        &__btn {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    
+    &-cta {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &__btn {
+            width: 100%;
+        }
+    }
+    
+    &-box {
+        background: #FFF;
+        padding: 20px;
+        border: 1px solid #E0E0E0;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        &__heading {
+            font-size: 16px;
+            line-height: 1.6em;
+            margin-bottom: 15px;
+            margin-top: 0;
+            text-align: center;
+        }
+        &__p {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    }
+    
+    &__img-partner {
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* ===================
+ * Sidebar Gallery
+ * =================== */
+.sidebar-gallery {
+    width: 50%;
+    padding: 5px;
+    float: left;
+    
+    &__img {
+        width: 100%;
+        height: 115px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    
+    &__link {
+        margin-top: 10px;
+    }
+}
+
+
+/* =================== 
+ * Popular Post Widget
+ * =================== */
+ 
+.toped {
+    &-title {
+        height: 46px;
+        overflow: hidden;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6em;
+    }
+    
+    &-item {
+        margin-bottom: 15px;
+    }
+    
+    &-w-img {
+        padding-right: 0;
+    }
+    
+    &-meta-post {
+        margin-top: 10px;
+        font-size: 10px;
+        color: #000;
+    }
+    
+    &-thumbnail__img {
+        width: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,10 +1,20 @@
 // Grid system
 .main {
-  @include make-sm-column($main-sm-columns);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @include make-md-column($main-md-columns);
+  @include breakpoint(xs) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   .sidebar-primary & {
-    @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
+    @include make-md-column($main-md-columns - $sidebar-md-columns);
   }
 }
 .sidebar {
-  @include make-sm-column($sidebar-sm-columns);
+  margin-top: 50px;
+  @include make-md-column($sidebar-md-columns);
+  @include breakpoint(xs) {
+    margin-top: 20px;
+  }
 }

@@ -1,0 +1,124 @@
+/* ===============
+ * Gallery Post
+ * ===============*/
+
+.gallery {
+    &-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include breakpoint(xxs) {
+            flex-direction: column;
+        }
+        @include breakpoint(xs) {
+            justify-content: center;
+        }
+    }
+    
+    &-box {
+        position: relative;
+        height: 200px;
+        margin: 5px;
+        text-align: center;
+        flex-basis: 200px;
+        &__img {
+            display: block;
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            cursor: zoom-in;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+            transition: 0.2s;
+        }
+        &__caption {
+            display: block;
+            position: relative;
+            top: -50px;
+            margin: 0;
+            z-index: 2;
+            color: #FFF;
+            opacity: 0;
+            transition: 0.2s;
+            @include breakpoint(xxs) {
+                display: none;
+            }
+        }
+        &:hover .gallery-box__caption {
+            opacity: 1;
+        }
+        &:hover .gallery-box__img {
+            filter: blur(2px) grayscale(25%);
+        }
+    }
+}
+
+
+/* ==============
+ * Lightbox
+ * ============== */
+
+.lightbox {
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding: 0 40px;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+    @include breakpoint(xxs) {
+        padding: 0 20px;
+    }
+    
+    &.active {
+        opacity: 1;
+        z-index: 10;
+    }
+    
+    &-body {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 20%;
+        width: 100%;
+        margin-bottom: 10px;
+        max-width: 630px;
+        padding: 15px;
+        background: #FFF;
+        border-radius: 5px;
+        &__img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        &__close {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #000;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 4px solid #FFF;
+        }
+    }
+    
+    &-close {
+        width: 100%;
+    }
+    
+    &-bottom {
+        position: relative;
+        top: 20%;
+        display: block;
+        &__caption {
+            text-align: center;
+            color: #FFF;
+        }
+    }
+}

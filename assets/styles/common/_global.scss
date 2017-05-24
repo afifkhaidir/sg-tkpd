@@ -1,9 +1,43 @@
 /* ============
+ * Typography
+ * ============ */
+ 
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+.text {
+  &-primary {
+    color: $text-primary;
+  }
+  &-secondary {
+    color: $text-secondary;
+  }
+}
+
+/* =============
+ * Links
+ * ============= */
+a {
+  color: $brand-primary;
+  text-decoration: none;
+  &:hover {
+    color: $color-dark-primary;
+    text-decoration: none;
+  }
+}
+
+
+/* ============
  * Breakpoint
  * ============ */
 
 @mixin breakpoint($class) {
-  @if $class == xs {
+  @if $class == xxs {
+    @media (max-width: 480px) { @content; }
+  }
+  
+  @else if $class == xs {
     @media (max-width: 767px) { @content; }
   }
  

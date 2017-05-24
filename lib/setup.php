@@ -59,7 +59,7 @@ function widgets_init() {
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
+    'before_title'  => '<h3 class="text-primary sidebar-box__heading">',
     'after_title'   => '</h3>'
   ]);
 
@@ -84,6 +84,7 @@ function display_sidebar() {
     // The sidebar will NOT be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
+    is_singular('gallery'),
     is_page_template('template-custom.php'),
   ]);
 

@@ -1,14 +1,17 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<?php use Banana\Pagination; ?>
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
-
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', 'search'); ?>
-<?php endwhile; ?>
-
-<?php the_posts_navigation(); ?>
+<!-- Blog Posts -->
+<div class="blog-posts-container clearfix">
+    <h3 class="text-secondary blog-posts-container__heading"><?php echo 'Hasil Pencarian "<strong>'.$_GET["s"].'</strong>"' ?></h3>
+    <div class="row">
+        <?php if(have_posts()) : while (have_posts()) : the_post(); 
+            get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); 
+        endwhile; 
+        else :
+            echo '<div class="col-sm-12"><div class="blog-post-well"><p>Post tidak ditemukan<p></div></div>';
+        endif?>
+    </div>
+    <div class="blog-pagination">
+        <?php Pagination\pagination(); ?>
+    </div>
+</div>

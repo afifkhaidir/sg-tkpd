@@ -1,0 +1,181 @@
+/* ==============
+ * Homepage Posts
+ * ==============*/
+.blog {
+    /* Container */
+    &-posts-container {
+        margin-bottom: 20px;
+        &__heading {
+            word-wrap: break-word;
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-size: 16px;
+        }
+    }
+    
+    /* Each post */
+    &-post {
+        margin-bottom: 20px;
+        border-radius: 3px;
+        overflow: hidden;
+        -webkit-box-shadow: 0 1px 5px #CECECE;
+        -moz-box-shadow: 0 1px 5px #CECECE;
+        box-shadow: 0 1px 5px #CECECE;
+        transition: .2s;
+        &:hover {
+            -webkit-box-shadow: 0 5px 10px #CECECE;
+            -moz-box-shadow: 0 5px 10px #CECECE;
+            box-shadow: 0 5px 10px #CECECE;
+        }
+        &-thumbnail {
+            height: 120px;
+            @include breakpoint(xs) {
+                height: auto;
+            }
+            &__img {
+                height: 100%;
+                min-height: 90px;
+                width: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+        &-body {
+            position: relative;
+            padding: 10px 10px 20px;
+            background-color: #FFF;
+            &__title {
+                height: 46px;
+                overflow: hidden;
+                line-height: 1.4em;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 16px;
+                letter-spacing: -0.5px;
+            }
+            &__date {
+                font-size: 12px;
+                color: $text-secondary;
+                margin-bottom: 5px;
+            }
+            &__text {
+                font-size: 13px;
+                height: 60px;
+                overflow: hidden;
+                & p {
+                    line-height: 1.5em;
+                }
+            }
+        }
+        &__excerpt-link {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &-well {
+            color: $text-primary;
+            background: #F7F7F7;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 1px solid rgba(0,0,0,.15);
+            margin-bottom: 20px;
+            text-align: center;
+            & p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* =============
+ * Pagination
+ * ============= */
+.blog-pagination {
+    float: right;
+}
+.pagination > li > a,
+.pagination > li > a:focus,
+.pagination > li > a:hover {
+    color: #42B549;
+}
+.pagination > .active > a {
+    background: #42B549;
+    border-color: #42B549;
+    color: #FFF;
+}
+.pagination > .active > a:hover {
+    background: #42B549;
+    border-color: #42B549;
+    color: #FFF;
+} 
+
+
+/* ==============
+ * Single Post
+ * ============== */
+
+.post {
+    &-thumbnail {
+        margin-bottom: 30px;
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }
+    }
+    
+    &-title {
+        margin-top: 0;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 1.4em;
+        letter-spacing: -0.8px;
+        color: rgba(0, 0, 0, 0.7);
+        @include breakpoint(xs) {
+            font-size: 26px;
+        }
+    }
+    
+    &-separator {
+        margin: 25px 0 36px 0;
+        width: 151px;
+        height: 0px;
+        border-bottom: solid 1px #42b549;
+    }
+    
+    &-detail {
+        color: rgba(0, 0, 0, 0.54);
+        line-height: 1.33;
+        &-timestamp {
+            float: left;
+        }
+    }
+    
+    &-content {
+        & p {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            line-height: 1.6em;
+        }
+        & img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        & blockquote { 
+            font-size: 1em;
+            line-height: 1.6em;
+            font-style: italic;
+            font-weight: 500;
+            border-left: 5px solid #eee;
+        }
+    }
+    
+    &-navigation {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #42b549;
+    }
+}

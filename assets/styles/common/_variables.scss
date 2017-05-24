@@ -2,8 +2,18 @@
 $icon-font-path:        "../fonts/";
 
 // Grid settings
-$main-sm-columns:       12;
-$sidebar-sm-columns:    4;
+$main-md-columns:       12;
+$sidebar-md-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary:         #42B549;
+$brand-secondary:       #FF5722;
+
+$color-dark-primary:    #4FA149;
+$color-dark-secondary:  #EF430C;
+
+
+// Typography
+$text-primary:          rgba(0, 0, 0, .7);
+$text-secondary:        rgba(0, 0, 0, .54);
+$text-disabled:         rgba(0, 0, 0, .38);
